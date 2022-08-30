@@ -7,7 +7,7 @@ function App() {
   const [location, setLocation] = useState('')
 
   const getWeather = () => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=dallas&appid=9636a0d670bb028a34afd3c82ff192b5`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=dallas&units=imperial&appid=9636a0d670bb028a34afd3c82ff192b5`)
     .then((response) => {
       return response.json()
     })
@@ -24,14 +24,14 @@ function App() {
     <>
       <div>
         <h1 className="name">{weather.name}</h1>
-        <p className="temperature">60 degrees F</p>
-        <p className="description">Clouds</p>
+        {weather.main ? <p >{weather.main.temp}°F</p> : null}
+        {weather.weather ? <p>{weather.weather[0].main}</p> : null}
         <p>Feels Like</p>
-        <p className="feelsLike">65 degrees F</p>
+        {weather.main ? <p>{weather.main.feels_like}°F</p> : null}
         <p>Humidity</p>
-        <p className="humidity">20%</p>
+        {weather.main ? <p>{weather.main.humidity}%</p> : null}
         <p>Wind Speed</p>
-        <p className="wind"> 12 MPH</p>
+        {weather.wind ? <p>{weather.wind.speed} MPH</p> : null}
       </div>
     </>
   )
