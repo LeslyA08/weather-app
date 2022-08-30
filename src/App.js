@@ -20,9 +20,14 @@ function App() {
 
   return (
     <>
-      <h1> Random Weather Generator</h1>
-      <Button onClick={getWeather} label="Get Random Weather" />
-      <WeatherContainer weather={weather} />
+      <div>
+        <h1 className="name">Dallas</h1>
+        <p className="temperature">60 degrees F</p>
+        <p className="description">Clouds</p>
+        <p className="feelsLike">65 degrees F</p>
+        <p className="humidity">20%</p>
+        <p className="wind"> 12 MPH</p>
+      </div>
     </>
   )
 };
