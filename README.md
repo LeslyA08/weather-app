@@ -17,12 +17,7 @@ MySQL
 
 The styling of your application is completely up to you but feel free to keep this simple to allow you more time to focus on your Fetch/API/DB logic.
 
--build react app
--make it just like the beer react app
--search bar to search through api
--display the specific weather
--only display once searched
--card for the weather information
+
 -create new api
 -connect database to api
 -be able to save data, the city when searched
